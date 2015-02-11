@@ -1,0 +1,7 @@
+config BR2_PACKAGE_LED_APP
+	bool "led_app"
+	depends on BR2_PACKAGE_II_VI_APPLICATIONS
+	help
+		led_app is an application for the control of the USR0 LED on 
+		BeagleBone Black.
+

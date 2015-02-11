@@ -1,0 +1,6 @@
+config BR2_PACKAGE_MTHREAD_DEMO
+	bool "multi-thread programming demo"
+	depends on BR2_PACKAGE_II_VI_APPLICATIONS
+	help
+		mthread_demo is a demo program to show the multi-threading programming
+		API usage in embedded Linux environment.

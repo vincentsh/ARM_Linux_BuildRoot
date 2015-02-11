@@ -1,0 +1,7 @@
+config BR2_PACKAGE_HELLO_WORLD
+	bool "hello_world"
+	depends on BR2_PACKAGE_II_VI_APPLICATIONS
+	help
+		hello_world is an application that prints "Hello world" test messages 
+		on standard output
+

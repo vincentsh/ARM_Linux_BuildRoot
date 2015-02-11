@@ -1,0 +1,13 @@
+config BR2_PACKAGE_INTERPROCESS_COMM
+	bool "interprocess comm demo"
+	depends on BR2_PACKAGE_II_VI_APPLICATIONS
+	help
+		"interprocess comm demo in c++" is an application that demonstrates the the inter-
+		process/interthread communication using message queue, which is written in C++.
+		
+		Four different interprocess/interthread data communication methods are demonstrated:
+		1. Pipe
+		2. Named Pipe
+		3. Message Queue
+		4. Shared Memory
+

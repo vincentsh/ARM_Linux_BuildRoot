@@ -1,0 +1,44 @@
+#!/bin/sh
+
+MOD_DEFAULT_PARM=$TARGET_DIR/etc/modprobe.conf
+ROOT_PROFILE=$TARGET_DIR/root/.profile
+
+echo "This is Buildroot Pre-Build Script!"
+
+echo "Creating " $MOD_DEFAULT_PARM
+> $MOD_DEFAULT_PARM
+
+for dir in $BASE_DIR/build/*/; do
+	if [ -r ${dir}default.conf ]
+	then 
+		cat ${dir}default.conf >> $MOD_DEFAULT_PARM
+		echo >> $MOD_DEFAULT_PARM
+	fi
+done
+
+if [ -f $TARGET_DIR/usr/sbin/xinetd ]; then
+	cp script/xinetd.conf -t $TARGET_DIR/etc
+	cp script/S99xinetd -t $TARGET_DIR/etc/init.d
+else
+	rm -f $TARGET_DIR/etc/xinetd.conf
+	rm -f $TARGET_DIR/etc/init.d/S99xinetd
+fi
+
+if [ -f $TARGET_DIR/usr/sbin/tftpd ]; then 
+	rm -f $TARGET_DIR/usr/sbin/in.tftpd
+	ln -s -T tftpd $TARGET_DIR/usr/sbin/in.tftpd
+fi
+
+if [ -f $TARGET_DIR/etc/securetty ]; then 
+	echo "pts/0" >> $TARGET_DIR/etc/securetty
+	echo "pts/1" >> $TARGET_DIR/etc/securetty
+fi
+
+if [ -f $ROOT_PROFILE ]; then
+	grep "PS1=" $ROOT_PROFILE > /dev/null || \
+	echo "export PS1=\"\\u@\\h: \\w# \"" >> $ROOT_PROFILE
+else 
+	echo "export PS1=\"\\u@\\h: \\w# \"" > $ROOT_PROFILE
+fi
+
+cp script/uEnv.txt -t $BINARIES_DIR

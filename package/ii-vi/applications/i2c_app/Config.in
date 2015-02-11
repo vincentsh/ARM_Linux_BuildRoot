@@ -1,0 +1,7 @@
+config BR2_PACKAGE_I2C_APP
+	bool "i2c_app"
+	depends on BR2_PACKAGE_II_VI_APPLICATIONS
+	help
+		i2c_app is an command based application for I2C master on BeagleBone 
+		Black.
+

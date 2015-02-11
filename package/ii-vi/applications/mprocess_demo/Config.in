@@ -1,0 +1,6 @@
+config BR2_PACKAGE_MPROCESS_DEMO
+	bool "multi-process programming demo"
+	depends on BR2_PACKAGE_II_VI_APPLICATIONS
+	help
+		mprocess_demo is a demo program to show the multi-process programming
+		API usage in embedded Linux environment.

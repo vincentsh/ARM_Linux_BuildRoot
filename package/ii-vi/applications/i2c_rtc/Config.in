@@ -1,0 +1,6 @@
+config BR2_PACKAGE_I2C_RTC
+	bool "i2c_rtc"
+	depends on BR2_PACKAGE_II_VI_APPLICATIONS
+	help
+		i2c_rtc is an I2C based RTC application working on BeagleBone Black.
+

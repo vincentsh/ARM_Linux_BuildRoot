@@ -1,0 +1,7 @@
+config BR2_PACKAGE_MTHREAD_DEMO_MOD
+	bool "mthread_demo_mod"
+	depends on BR2_PACKAGE_II_VI_MODULES
+	help
+		mthread_demo_mod is a kernel module (driver) demo for the control of the USR0 
+		LED on BeagleBone Black with kernel multi-threading capability.
+

@@ -1,0 +1,7 @@
+config BR2_PACKAGE_TEST_SCRIPT
+	bool "test_script"
+	depends on BR2_PACKAGE_II_VI_APPLICATIONS
+	help
+		test_script is a shell script that prints test messages on standard 
+		output.
+

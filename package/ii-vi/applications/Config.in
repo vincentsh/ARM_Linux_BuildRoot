@@ -1,0 +1,18 @@
+
+menuconfig BR2_PACKAGE_II_VI_APPLICATIONS
+	bool "ii-vi applications"
+	select BR2_PACKAGE_HELLO_WORLD
+	select BR2_PACKAGE_I2C_APP
+	select BR2_PACKAGE_I2C_RTC
+	select BR2_PACKAGE_LED_APP
+	select BR2_PACKAGE_TEST_SCRIPT
+
+source "package/ii-vi/applications/hello_world/Config.in"
+source "package/ii-vi/applications/i2c_app/Config.in"
+source "package/ii-vi/applications/i2c_rtc/Config.in"
+source "package/ii-vi/applications/led_app/Config.in"
+source "package/ii-vi/applications/test_script/Config.in"
+source "package/ii-vi/applications/mthread_demo/Config.in"
+source "package/ii-vi/applications/mprocess_demo/Config.in"
+source "package/ii-vi/applications/interprocess_comm/Config.in"
+

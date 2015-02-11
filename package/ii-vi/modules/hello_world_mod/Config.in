@@ -1,0 +1,7 @@
+config BR2_PACKAGE_HELLO_WORLD_MOD
+	bool "hello_world_mod"
+	depends on BR2_PACKAGE_II_VI_MODULES
+	help
+		hello_world is a kernel module (driver) demo that prints "hello world" 
+		message during load/unload process.
+

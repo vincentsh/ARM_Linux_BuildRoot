@@ -1,0 +1,11 @@
+
+menuconfig BR2_PACKAGE_II_VI_MODULES
+	bool "ii-vi modules"
+	select BR2_PACKAGE_BBB_LED_MOD
+	select BR2_PACKAGE_HELLO_WORLD_MOD
+	select BR2_PACKAGE_HELLO_WORLD2_MOD
+	
+source "package/ii-vi/modules/bbb_led_mod/Config.in"
+source "package/ii-vi/modules/hello_world_mod/Config.in"
+source "package/ii-vi/modules/hello_world2_mod/Config.in"
+source "package/ii-vi/modules/mthread_demo_mod/Config.in"

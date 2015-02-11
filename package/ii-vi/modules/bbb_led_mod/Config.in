@@ -1,0 +1,7 @@
+config BR2_PACKAGE_BBB_LED_MOD
+	bool "bbb_led_mod"
+	depends on BR2_PACKAGE_II_VI_MODULES
+	help
+		bbb_led is a kernel module (driver) demo for the control of the USR0 
+		LED on BeagleBone Black.
+
